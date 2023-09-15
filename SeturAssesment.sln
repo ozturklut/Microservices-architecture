@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReportService", "ReportServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.Base", "src\BuildingBlocks\EventBus\EventBus.Base\EventBus.Base.csproj", "{22F6C6C1-9F00-43C4-8536-3E492020251F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.RabbitMQ", "src\BuildingBlocks\EventBus\EventBus.RabbitMQ\EventBus.RabbitMQ.csproj", "{4B1D639E-6DBB-4934-A53A-540F39703EDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{22F6C6C1-9F00-43C4-8536-3E492020251F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22F6C6C1-9F00-43C4-8536-3E492020251F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22F6C6C1-9F00-43C4-8536-3E492020251F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B1D639E-6DBB-4934-A53A-540F39703EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B1D639E-6DBB-4934-A53A-540F39703EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B1D639E-6DBB-4934-A53A-540F39703EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B1D639E-6DBB-4934-A53A-540F39703EDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{1EA6B2A1-6C79-4AF8-A204-AAFA06ACAF6D} = {949A180D-4149-4EF5-9404-10ADB0E19B86}
 		{824F48DE-93DE-4413-99F3-F3105AB9ECAB} = {949A180D-4149-4EF5-9404-10ADB0E19B86}
 		{22F6C6C1-9F00-43C4-8536-3E492020251F} = {268F510E-08C3-46A1-BD24-2E4F46DDB78D}
+		{4B1D639E-6DBB-4934-A53A-540F39703EDB} = {268F510E-08C3-46A1-BD24-2E4F46DDB78D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29794621-75C0-471D-A95B-E9E435FA7220}
