@@ -24,7 +24,7 @@ namespace ReportService.Api.Controllers
         [ProducesResponseType(typeof(ApiBaseResponseModel<List<ReportResponseModel>>), StatusCodes.Status200OK)]
         public async Task<IActionResult> Get()
         {
-            var responseModel = await _reportService.GetReportWithDetail();
+            var responseModel = await _reportService.GetAllReport();
             return responseModel.Success ? Ok(responseModel) : BadRequest(responseModel);
         }
 
