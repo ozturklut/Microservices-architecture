@@ -2,6 +2,8 @@
 using EventBus.Base.Abstraction;
 using EventBus.Factory;
 using ReportService.Api.Infrastructure.Services.Abstract;
+using ReportService.Api.IntegrationEvents.EventHandlers;
+using ReportService.Api.IntegrationEvents.Events;
 using System.Reflection;
 
 namespace ReportService.Api.Extensions
@@ -28,7 +30,18 @@ namespace ReportService.Api.Extensions
                 return EventBusFactory.Create(config, sp);
             });
 
+            services.AddScoped<ReportCreatedIntegrationEventHandler>();
+
             return services;
+        }
+
+        public static IServiceProvider ConfigureSubscription(this IServiceProvider serviceProvider)
+        {
+            var eventBus = serviceProvider.GetRequiredService<IEventBus>();
+
+            eventBus.Subscribe<ReportCreatedIntegrationEvent, ReportCreatedIntegrationEventHandler>();
+
+            return serviceProvider;
         }
     }
 }

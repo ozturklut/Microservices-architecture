@@ -1,0 +1,2 @@
+ContactService.Api https://localhost:7044
+ReportService.Api https://localhost:7258

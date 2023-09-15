@@ -1,5 +1,10 @@
-﻿using ContactService.Api.Infrastructure.Services.Abstarct;
-using ContactService.Api.Infrastructure.Services;
+﻿using ContactService.Api.Infrastructure.Services;
+using ContactService.Api.Infrastructure.Services.Abstarct;
+using ContactService.Api.IntegrationEvents.EventHandlers;
+using ContactService.Api.IntegrationEvents.Events;
+using EventBus.Base;
+using EventBus.Base.Abstraction;
+using EventBus.Factory;
 using System.Reflection;
 
 namespace ContactService.Api.Extensions
@@ -15,7 +20,31 @@ namespace ContactService.Api.Extensions
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<IContactInformationService, ContactInformationService>();
 
+            services.AddSingleton<IEventBus>(sp =>
+            {
+                EventBusConfig config = new EventBusConfig()
+                {
+                    ConnectionRetryCount = 5,
+                    EventNameSuffix = "IntegrationEvent",
+                    SubscriberClientAppName = "ConcatService",
+                    EventBusType = EventBusType.RabbitMQ
+                };
+
+                return EventBusFactory.Create(config, sp);
+            });
+
+            services.AddScoped<ReportCreationIntegrationEventHandler>();
+
             return services;
+        }
+
+        public static IServiceProvider ConfigureSubscription(this IServiceProvider serviceProvider)
+        {
+            var eventBus = serviceProvider.GetRequiredService<IEventBus>();
+
+            eventBus.Subscribe<ReportCreationIntegrationEvent, ReportCreationIntegrationEventHandler>();
+
+            return serviceProvider;
         }
     }
 }
