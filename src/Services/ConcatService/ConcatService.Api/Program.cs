@@ -1,4 +1,5 @@
 using ConcatService.Api.Extensions;
+using ContactService.Api.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigureDbContext(builder.Configuration);
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 
