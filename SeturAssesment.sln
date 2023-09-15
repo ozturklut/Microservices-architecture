@@ -26,7 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.Factory", "src\Bui
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReportService", "ReportService", "{F1FF74E7-E125-475B-B1F3-C22997D1C2EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcatService.Api", "src\Services\ConcatService\ConcatService.Api\ConcatService.Api.csproj", "{45828E04-8433-4236-BBA1-9417E06A404A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactService.Api", "src\Services\ConcatService\ConcatService.Api\ContactService.Api.csproj", "{45828E04-8433-4236-BBA1-9417E06A404A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportService.Api", "src\Services\ReportService\ReportService.Api\ReportService.Api.csproj", "{FCEE567B-ED12-4F1C-B0C7-9D8C1FC6FBB2}"
 EndProject
